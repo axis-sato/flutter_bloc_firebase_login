@@ -3,13 +3,13 @@ import 'package:bloc/bloc.dart';
 import './bloc.dart';
 
 class AuthenticationBloc
-    extends Bloc<AuthenticationEvent, AuthenticationState> {
+    extends Bloc<AuthenticationState, AuthenticationState> {
   @override
-  AuthenticationState get initialState => InitialAuthenticationState();
+  AuthenticationState get initialState => null;
 
   @override
   Stream<AuthenticationState> mapEventToState(
-    AuthenticationEvent event,
+    AuthenticationState event,
   ) async* {
     // TODO: Add Logic
   }
