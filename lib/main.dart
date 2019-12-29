@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_firebase_login/authentication_bloc/authentication_bloc.dart';
 import 'package:flutter_bloc_firebase_login/authentication_bloc/authentication_event.dart';
 import 'package:flutter_bloc_firebase_login/authentication_bloc/authentication_state.dart';
+import 'package:flutter_bloc_firebase_login/home_screen.dart';
 import 'package:flutter_bloc_firebase_login/simple_bloc_delegate.dart';
 import 'package:flutter_bloc_firebase_login/splash_screen.dart';
 import 'package:flutter_bloc_firebase_login/user_repository.dart';
@@ -38,6 +39,9 @@ class App extends StatelessWidget {
         builder: (context, state) {
           if (state is Uninitialized) {
             return SplashScreen();
+          }
+          if (state is Authenticated) {
+            return HomeScreen(name: state.displayName);
           }
           return Container();
         },
