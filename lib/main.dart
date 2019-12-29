@@ -4,6 +4,7 @@ import 'package:flutter_bloc_firebase_login/authentication_bloc/authentication_b
 import 'package:flutter_bloc_firebase_login/authentication_bloc/authentication_event.dart';
 import 'package:flutter_bloc_firebase_login/authentication_bloc/authentication_state.dart';
 import 'package:flutter_bloc_firebase_login/simple_bloc_delegate.dart';
+import 'package:flutter_bloc_firebase_login/splash_screen.dart';
 import 'package:flutter_bloc_firebase_login/user_repository.dart';
 import 'package:bloc/bloc.dart';
 
@@ -35,6 +36,9 @@ class App extends StatelessWidget {
     return MaterialApp(
       home: BlocBuilder<AuthenticationBloc, AuthenticationState>(
         builder: (context, state) {
+          if (state is Uninitialized) {
+            return SplashScreen();
+          }
           return Container();
         },
       ),
