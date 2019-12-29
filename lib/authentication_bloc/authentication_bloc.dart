@@ -5,7 +5,7 @@ import 'package:flutter_bloc_firebase_login/user_repository.dart';
 import './bloc.dart';
 
 class AuthenticationBloc
-    extends Bloc<AuthenticationState, AuthenticationState> {
+    extends Bloc<AuthenticationEvent, AuthenticationState> {
   final UserRepository _userRepository;
 
   AuthenticationBloc({@required UserRepository userRepository})
@@ -17,7 +17,7 @@ class AuthenticationBloc
 
   @override
   Stream<AuthenticationState> mapEventToState(
-    AuthenticationState event,
+    AuthenticationEvent event,
   ) async* {
     if (event is AppStarted) {
       yield* _mapAppStartedToState();
