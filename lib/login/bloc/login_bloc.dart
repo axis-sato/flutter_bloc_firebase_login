@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc_firebase_login/user_repository.dart';
+import '../../validators.dart';
 import './bloc.dart';
 import 'package:rxdart/rxdart.dart';
 
