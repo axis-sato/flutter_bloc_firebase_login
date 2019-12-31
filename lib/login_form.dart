@@ -4,6 +4,7 @@ import 'package:flutter_bloc_firebase_login/login/bloc/bloc.dart';
 import 'package:flutter_bloc_firebase_login/user_repository.dart';
 
 import 'authentication_bloc/bloc.dart';
+import 'login/create_account_button.dart';
 import 'login/google_login_button.dart';
 import 'login/login_button.dart';
 
